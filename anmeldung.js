@@ -33,7 +33,7 @@ document.getElementById("register-form").addEventListener("submit", (event) => {
     createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             console.log("User created:", userCredential.user);
-            window.location.href = "dashboard.html";
+            window.location.href = "login.html";
         })
         .catch((error) => {
             alert(error.message);
@@ -51,7 +51,7 @@ document.getElementById("signup")?.addEventListener("click", () => {
     const email = document.getElementById("reg-email").value;
     const password = document.getElementById("reg-password").value;
     createUserWithEmailAndPassword(auth, email, password)
-        .then(() => window.location.href = "anmeldung.html")
+        .then(() => window.location.href = "dashboard.html")
         .catch(error => alert(error.message));
 });
 
@@ -65,7 +65,7 @@ document.getElementById("login")?.addEventListener("click", (event) => {
 });
 
 document.getElementById("logout")?.addEventListener("click", () => {
-    signOut(auth).then(() => window.location.href = "anmeldung.html");
+    signOut(auth).then(() => window.location.href = "login.html");
 });
 
 document.getElementById("forgot-pass")?.addEventListener("click", () => {
