@@ -33,7 +33,7 @@ document.getElementById("register-form").addEventListener("submit", (event) => {
     createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             console.log("User created:", userCredential.user);
-            window.location.href = "anmeldung.html";
+            window.location.href = "dashboard.html";
         })
         .catch((error) => {
             alert(error.message);
