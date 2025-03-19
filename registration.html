@@ -3,40 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Form</title>
+    <title>Registrieren</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="anmeldung">
+    <div class="nav">
+        <a href="index.html">Startseite</a>
+        <a href="ubermich.html">Über mich</a>
+        <a href="stundenplan.html">Stundenplan</a>
+        <a href="projekte.html">Projekte</a>
+        <a href="kontakt.html">Kontakt</a>
+        <a href="login.html" id="anmelden">Anmelden</a>
+        <a href="registration.html" id="registrieren" class="active">Registrieren</a>
+    </div>
     <div class="box-center">
-        <h1 class="box-title">Signup Form</h1>
+        <h1 class="box-title">Registrieren</h1>
         <form method="POST" class="box-form">
             <div class="form-field">
                 <input type="text" required>
                 <span></span>
-                <label>Username</label>
-            </div>
-            <div class="form-field">
-                <input type="text" required>
-                <span></span>
-                <label>Email</label>
-            </div>
-            <div class="form-field">
-                <input type="text" required>
-                <span></span>
-                <label>Fullname</label>
+                <label>E-Mail</label>
             </div>
             <div class="form-field">
                 <input type="password" required>
                 <span></span>
-                <label>Password</label>
+                <label>Passwort</label>
+            </div>
+            <div class="form-field">
+                <input type="password" required>
+                <span></span>
+                <label>Passwort bestätigen</label>
             </div>
             <div class="field-login">
-                <button type="submit" class="button-login">Signup</button>
+                <button type="submit" class="button-login">Registrieren</button>
             </div>
             <div class="field-signup">
-                Already have account? <a href="login.html">Login</a>
+                Bereits ein Konto? <a href="login.html">Einloggen</a>
             </div>
         </form>
     </div>
+    <script type="module" src="anmeldung.js"></script>
 </body>
 </html>
