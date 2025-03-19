@@ -2,27 +2,16 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-.text {
-    width: 60%;
-    max-width: 700px;
-    padding: 20px;
-    margin: 25px auto;
-}
-
-#stundenplan {
-    max-width: 800px;
-}
-
-#projekte {
-    max-width: 800px;
+    font-family: Arial, sans-serif;
 }
 
 .nav {
     background-color: #222;
     display: flex;
     justify-content: center;
+    position: fixed; /* Fix it at the top */
+    width: 100%;
+    top: 0;
 }
 
 .nav a {
@@ -40,6 +29,21 @@
 .nav a.active {
     background-color: red;
     color: #fff;
+}
+
+.text {
+    width: 60%;
+    max-width: 700px;
+    padding: 20px;
+    margin: 25px auto;
+}
+
+#stundenplan {
+    max-width: 800px;
+}
+
+#projekte {
+    max-width: 800px;
 }
 
 h1 {
@@ -107,7 +111,6 @@ ol, ul {
 }
 
 .anmeldung {
-    font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
