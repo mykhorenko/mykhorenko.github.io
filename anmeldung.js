@@ -17,6 +17,29 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 
+document.getElementById("register-form").addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const email = document.getElementById("reg-email").value;
+    const password = document.getElementById("reg-password").value;
+    const confirmPassword = document.getElementById("reg-confirm-password").value;
+
+    if (password !== confirmPassword) {
+        document.getElementById("password-error").style.display = "block";
+        return;
+    }
+
+    document.getElementById("password-error").style.display = "none";
+    createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            console.log("User created:", userCredential.user);
+            window.location.href = "anmeldung.html";
+        })
+        .catch((error) => {
+            alert(error.message);
+        });
+});
+
 document.getElementById("google-login")?.addEventListener("click", () => {
     const provider = new GoogleAuthProvider();
     signInWithPopup(auth, provider)

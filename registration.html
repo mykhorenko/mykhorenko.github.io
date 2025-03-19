@@ -18,21 +18,22 @@
     </div>
     <div class="box-center">
         <h1 class="box-title">Registrieren</h1>
-        <form method="POST" class="box-form">
+        <form id="register-form" method="POST" class="box-form">
             <div class="form-field">
-                <input type="text" required>
+                <input type="email" id="reg-email" required>
                 <span></span>
                 <label>E-Mail</label>
             </div>
             <div class="form-field">
-                <input type="password" required>
+                <input type="password" id="reg-password" required>
                 <span></span>
                 <label>Passwort</label>
             </div>
             <div class="form-field">
-                <input type="password" required>
+                <input type="password" id="reg-confirm-password" required>
                 <span></span>
                 <label>Passwort bestätigen</label>
+                <div id="password-error" style="color: red; display: none;">Passwörter stimmen nicht überein!</div>
             </div>
             <div class="field-login">
                 <button type="submit" class="button-login">Registrieren</button>
