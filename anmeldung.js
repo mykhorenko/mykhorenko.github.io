@@ -32,7 +32,8 @@ document.getElementById("signup")?.addEventListener("click", () => {
         .catch(error => alert(error.message));
 });
 
-document.getElementById("login")?.addEventListener("click", () => {
+document.getElementById("login")?.addEventListener("click", (event) => {
+    event.preventDefault();
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
     signInWithEmailAndPassword(auth, email, password)
@@ -44,7 +45,7 @@ document.getElementById("logout")?.addEventListener("click", () => {
     signOut(auth).then(() => window.location.href = "anmeldung.html");
 });
 
-document.getElementById("forgot-password")?.addEventListener("click", () => {
+document.getElementById("forgot-pass")?.addEventListener("click", () => {
     const email = document.getElementById("email").value;
     if (email) {
         sendPasswordResetEmail(auth, email)

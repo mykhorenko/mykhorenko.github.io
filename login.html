@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anmelden</title>
+    <link rel="icon" href="icon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="anmeldung">
+    <div class="nav">
+        <a href="index.html">Startseite</a>
+        <a href="ubermich.html">Über mich</a>
+        <a href="stundenplan.html">Stundenplan</a>
+        <a href="projekte.html">Projekte</a>
+        <a href="kontakt.html">Kontakt</a>
+        <a href="login.html" id="anmelden" class="active">Anmelden</a>
+        <a href="kontakt.html" id="registrieren">Registrieren</a>
+    </div>
+    <div class="box-center">
+        <h1 class="box-title">Anmelden</h1>
+        <form method="POST" class="box-form">
+            <div class="form-field">
+                <input type="email" id="email" required>
+                <span></span>
+                <label>E-Mail</label>
+            </div>
+            <div class="form-field">
+                <input type="password" id="password" required>
+                <span></span>
+                <label>Passwort</label>
+            </div>
+            <div class="field-forgot">
+                <a id="forgot-pass" class="forgot-pass" href="#">Passwort vergessen?</a>
+            </div>
+            <div class="field-login">
+                <button type="submit" class="button-login" id="login">Anmelden</button>
+            </div>
+            <div class="field-signup">
+                Noch kein Mitglied? <a href="registration.html">Registrieren</a>
+            </div>
+        </form>
+    </div>    
+    <script type="module" src="anmeldung.js"></script>
+</body>
+</html>
