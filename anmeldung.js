@@ -3,6 +3,7 @@ import { getAuth, signInWithPopup, GoogleAuthProvider,
          signInWithEmailAndPassword, createUserWithEmailAndPassword, 
          signOut, sendPasswordResetEmail } 
 from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyDi-NT8_d6-_JHmXGw6LhV5sAN31moO1dk",
@@ -16,6 +17,12 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
+
+onAuthStateChanged(auth, (user) => {
+    if (!user) {
+        window.location.href = "login.html";
+    }
+});
 
 document.getElementById("register-form").addEventListener("submit", (event) => {
     event.preventDefault();
@@ -68,7 +75,8 @@ document.getElementById("logout")?.addEventListener("click", () => {
     signOut(auth).then(() => window.location.href = "login.html");
 });
 
-document.getElementById("forgot-pass")?.addEventListener("click", () => {
+document.getElementById("forgot-pass")?.addEventListener("click", (event) => {
+    event.preventDefault();
     const email = document.getElementById("email").value;
     if (email) {
         sendPasswordResetEmail(auth, email)
