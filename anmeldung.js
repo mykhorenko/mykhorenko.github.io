@@ -3,7 +3,6 @@ import { getAuth, signInWithPopup, GoogleAuthProvider,
          signInWithEmailAndPassword, createUserWithEmailAndPassword, 
          signOut, sendPasswordResetEmail } 
 from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
-import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyDi-NT8_d6-_JHmXGw6LhV5sAN31moO1dk",
