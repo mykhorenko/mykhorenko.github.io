@@ -18,12 +18,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 
-onAuthStateChanged(auth, (user) => {
-    if (!user) {
-        window.location.href = "login.html";
-    }
-});
-
 document.getElementById("register-form").addEventListener("submit", (event) => {
     event.preventDefault();
 
