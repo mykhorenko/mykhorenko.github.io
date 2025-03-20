@@ -68,14 +68,19 @@ document.getElementById("logout")?.addEventListener("click", () => {
     signOut(auth).then(() => window.location.href = "login.html");
 });
 
-document.getElementById("forgot-pass")?.addEventListener("click", (event) => {
-    event.preventDefault();
-    const email = document.getElementById("email").value;
+document.getElementById('forgot-password-btn').addEventListener('click', function() {
+    const email = prompt('Please enter your email address for password reset:');
+    
     if (email) {
-        sendPasswordResetEmail(auth, email)
-            .then(() => alert("Passwort-Reset-E-Mail gesendet."))
-            .catch(error => alert(error.message));
+      sendPasswordResetEmail(auth, email)
+        .then(() => {
+          alert('Password reset email sent!');
+        })
+        .catch((error) => {
+          console.error('Error sending email:', error);
+          alert('There was an error sending the reset email. Please try again.');
+        });
     } else {
-        alert("Bitte E-Mail eingeben!");
+      alert('Email is required!');
     }
 });
